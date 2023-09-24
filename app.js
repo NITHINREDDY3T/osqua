@@ -4,12 +4,12 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const app = express();
-
+const MongoStore = require('express-session-mongo');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-mongoose.connect('mongodb+srv://nikki:niThin@45@cluster0.89imtcg.mongodb.net/nikki?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://nikki:niThin45@cluster0.89imtcg.mongodb.net/nikki?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -126,11 +126,13 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// Login route
-app.get('/login', (req, res) => {
+// Root route
+app.get('/', (req, res) => {
   res.render('login-register', { error: null });
 });
-app.get('/', (req, res) => {
+
+// Login route
+app.get('/login', (req, res) => {
   res.render('login-register', { error: null });
 });
 
@@ -369,7 +371,6 @@ app.post('/comment/:id', async (req, res) => {
       return res.status(400).send('Maximum comment limit reached');
     }
 
-    
     const newComment = {
       text,
       userId,
