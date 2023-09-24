@@ -1,0 +1,144 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Set a background color and font for the entire page */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Header styling */
+h1 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Subheadings */
+h2 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Styling for links */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Form styling */
+form {
+    margin-top: 10px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"],
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* List styling */
+ul {
+    margin-top: 10px;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+li:hover {
+    transform: scale(1.02);
+}
+
+/* Comments styling */
+ul ul {
+    margin-top: 5px;
+}
+
+/* Horizontal list for category filters */
+ul.category-list {
+    display: flex;
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    justify-content: center;
+}
+
+ul.category-list li {
+    margin: 0 10px;
+}
+
+/* Logout link */
+a[href="/logout"] {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #d9534f;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    /* Adjust styles for smaller screens here */
+    h1 {
+        font-size: 20px;
+    }
+    
+    h2 {
+        font-size: 16px;
+    }
+    
+    ul.category-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    ul.category-list li {
+        margin: 5px 0;
+    }
+}
