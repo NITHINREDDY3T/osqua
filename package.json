@@ -7,6 +7,10 @@
     "start": "babel-node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+  "node": "15.x"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
