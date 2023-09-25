@@ -100,7 +100,7 @@
                             </li>
                         <% }); %>
                     </ul>
-                    <form action="/comment/<%= post._id %>" method="post" style="display: none;">
+                    <form action="/comment/<%= post._id %>" method="post">
                         <label for="comment">Add a comment:</label>
                         <input type="text" id="comment" name="text" required>
                         <button type="submit">Comment</button>

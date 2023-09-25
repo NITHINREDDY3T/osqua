@@ -4,15 +4,12 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 const app = express();
-
+const MongoStore = require('express-session-mongo');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-// Load environment variables from .env file
-require('dotenv').config();
-
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect('mongodb+srv://nikki:niThin45@cluster0.89imtcg.mongodb.net/nikki?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -68,7 +65,7 @@ const Post = mongoose.model('Post', postSchema);
 
 app.use(
   session({
-    secret: process.env.SESSION_SECRET, // Change this to a secure secret key
+    secret: 'Osos@4545', // Change this to a secure secret key
     resave: false,
     saveUninitialized: true,
   })
@@ -127,6 +124,11 @@ app.post('/register', async (req, res) => {
       .status(500)
       .render('login-register', { error: 'Internal server error' });
   }
+});
+
+// Root route
+app.get('/', (req, res) => {
+  res.render('login-register', { error: null });
 });
 
 // Login route
