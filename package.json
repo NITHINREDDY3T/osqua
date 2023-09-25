@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "babel-node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -22,5 +22,11 @@
     "mongo": "^0.1.0",
     "mongoose": "^7.5.2",
     "nvm": "^0.0.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/node": "^7.22.19",
+    "@babel/plugin-transform-nullish-coalescing-operator": "^7.22.11",
+    "@babel/preset-env": "^7.22.20"
   }
 }
